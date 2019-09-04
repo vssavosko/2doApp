@@ -1,0 +1,110 @@
+.wrapper {
+  width: 1000px;
+}
+
+.separator {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  border-radius: 0 0 0 50px;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  &__header-card {
+    position: relative;
+    background-color: white;
+    border-bottom: 1px solid white;
+    transition: .3s;
+    z-index: 2;
+
+    &_theme_light {
+      background-color: #fff;
+      border-color: #C8C7CD;
+    }
+
+    &_theme_dark {
+      background-color: #203040;
+      border-color: #162133;
+    }
+  }
+
+  &__tasks-card {
+    position: relative;
+    background-color: white;
+    top: -70px;
+    padding-top: 53px;
+    border-bottom: 1px solid white;
+    transition: .3s;
+    z-index: 1;
+
+    &_theme_light {
+      background-color: #fff;
+      border-color: #C8C7CD;
+    }
+
+    &_theme_dark {
+      background-color: #203040;
+      border-color: #162133;
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .separator {
+    border-radius: 0 0 50px 50px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .App {
+
+    &__tasks-card {
+      top: -65px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+
+  .App {
+
+    &__tasks-card {
+      top: -60px;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .App {
+
+    &__tasks-card {
+      top: -53px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .App {
+
+    &__tasks-card {
+      top: -48px;
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .App {
+
+    &__tasks-card {
+      top: -45px;
+    }
+  }
+}

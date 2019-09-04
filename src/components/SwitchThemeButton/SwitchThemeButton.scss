@@ -1,0 +1,71 @@
+.SwitchThemeButton {
+    position: fixed;
+    width: 66px;
+    height: 35px;
+    left: 20px;
+    bottom: 34px;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1;
+    -webkit-tap-highlight-color: transparent;
+
+    &_theme_light {
+        background-color: #007EE5;
+    }
+
+    &_theme_dark {
+        background-color: #3E6A97;
+    }
+
+    &__tumbler {
+        position: absolute;
+        width: 33px;
+        height: 33px;
+        right: 31px;
+        bottom: 0;
+        background-color: white;
+        border-radius: 25px;
+        transition: .3s;
+
+        &_theme_light {
+            color: #007EE5;
+        }
+
+        &_theme_dark {
+            color: #3E6A97;
+        }
+    }
+
+    &__tumbler_switch {
+        right: 0;
+    }
+
+    &__light-icon {
+        position: relative;
+        font-size: 1rem;
+        top: 1px;
+        right: 7px;
+        color: white;
+        z-index: 1;
+    }
+
+    &__dark-icon {
+        @extend .SwitchThemeButton__light-icon;
+        right: 0;
+        left: 7px;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    .SwitchThemeButton {
+        left: 22px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .SwitchThemeButton {
+        left: 18px;
+    }
+}

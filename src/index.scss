@@ -1,0 +1,26 @@
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  transition: .3s;
+
+  &_theme_light {
+    background-color: #F0EFF5;
+  }
+
+  &_theme_dark {
+    background-color: #18222C;
+  }
+}
+
+.button {
+  height: 40px;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  padding: 5px;
+  transition: .3s;
+}

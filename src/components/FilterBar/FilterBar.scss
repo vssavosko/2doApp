@@ -1,0 +1,72 @@
+.FilterBar {
+    display: flex;
+    width: 90%;
+    justify-content: flex-start;
+    padding-top: 20px;
+    -webkit-tap-highlight-color: transparent;
+
+    &__button {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        background-color: transparent;
+        padding: 5px 8px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .3s;
+
+        &:first-child {
+            margin-left: 10px;
+        }
+
+        &:not(:last-child) {
+            margin-right: 7.5px;
+        }
+
+        &_theme_light {
+            color: black;
+        }
+
+        &_theme_dark {
+            color: #F7F8F8;
+        }
+
+        &_isActive-light {
+            color: white;
+            background-color: #007EE5;
+            border-radius: 25px;
+            border-color: #007EE5;
+        }
+
+        &_isActive-dark {
+            color: #F7F8F8;
+            background-color: #3E6A97;
+            border-radius: 25px;
+            border-color: #3E6A97;
+        }
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .FilterBar {
+
+        &__button:first-child {
+            margin-left: 0
+        }
+
+        &__button:not(:last-child) {
+            margin-right: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .FilterBar {
+        justify-content: space-between;
+
+        &__button {
+            width: 133px;
+            padding: 2%;
+        }
+    }
+}

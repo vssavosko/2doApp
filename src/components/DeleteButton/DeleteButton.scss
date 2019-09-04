@@ -1,0 +1,57 @@
+.DeleteButton {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    right: 20px;
+    bottom: -60px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+    z-index: 1;
+    -webkit-tap-highlight-color: transparent;
+
+    &_theme_light {
+        color: #007EE5;
+        background-color: #fff;
+        border: 1px solid #007EE5;
+    }
+
+    &_theme_dark {
+        color: #3E6A97;
+        background-color: #203040;
+        border: 1px solid #3E6A97;
+    }
+
+    &_active-light {
+        color: white;
+        background-color: #007EE5;
+        bottom: 21px;
+    }
+
+    &_active-dark {
+        color: #F7F8F8;
+        background-color: #3E6A97;
+        bottom: 21px;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    .DeleteButton {
+        right: 22px;
+
+        &_active {
+            bottom: 22px;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .DeleteButton {
+        right: 18px;
+
+        &_active {
+            bottom: 18px;
+        }
+    }
+}

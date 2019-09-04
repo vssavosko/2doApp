@@ -1,0 +1,258 @@
+@import '../../mixins';
+
+.TaskList {
+    width: 90%;
+    transition: .3s;
+
+    &__delete-button {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        background-color: transparent;
+        border: none;
+        border-radius: 25px;
+        right: 6px;
+        cursor: pointer;
+
+        &_theme_light {
+            color: #007EE5;
+
+            @include hover-supported() {
+                background-color: #007EE5;
+                color: white;
+                transition: .3s;
+            }
+        }
+
+        &_theme_dark {
+            color: #3E6A97;
+
+            @include hover-supported() {
+                background-color: #3E6A97;
+                color: #F7F8F8;
+                transition: .3s;
+            }
+        }
+
+        &:active {
+            background-color: #fff;
+        }
+    }
+
+    &__p {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        padding: 15px 20px;
+        animation: fadeInTask .3s ease-in-out;
+        transition: .3s;
+
+        &_theme_light {
+            color: black;
+        }
+
+        &_theme_dark {
+            color: #F7F8F8;
+        }
+    }
+
+    &__span {
+        position: relative;
+        top: 8px;
+        left: 4px;
+        animation: fadeInTask .3s ease-in-out;
+    }
+}
+
+.Task {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: {
+        top: 2%;
+        bottom: 2%;
+    }
+
+    padding: 15px 20px;
+    animation: fadeInTask .6s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+
+    &__checkbox {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 20px;
+        background-color: transparent;
+        border: 1px solid #C8C7CD;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: .3s;
+
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 6px;
+            height: 2px;
+            top: 16px;
+            left: 9px;
+            background-color: transparent;
+            transform: rotate(50deg)
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 11px;
+            height: 2px;
+            top: 14px;
+            left: 12px;
+            background-color: transparent;
+            transform: rotate(-45deg)
+        }
+
+        &_theme_light {
+            border: 1px solid #C8C7CD;
+        }
+
+        &_theme_dark {
+            border: 1px solid #162133;
+        }
+
+        &_isChecked-light {
+            background-color: #007EE5;
+            border-color: #007EE5;
+
+            &:after,
+            &:before {
+                background-color: white;
+                transition: .3s;
+            }
+        }
+
+        &_isChecked-dark {
+            background-color: #3E6A97;
+            border-color: #3E6A97;
+
+            &:after,
+            &:before {
+                background-color: #F7F8F8;
+                transition: .3s;
+            }
+        }
+    }
+
+    &__input {
+        width: 87%;
+        height: 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        border-radius: 25px;
+        padding: 5px 2%;
+        appearance: none;
+        transition: .3s;
+
+        &_theme_light {
+            color: white;
+            background-color: #007EE5;
+            border: 1px solid #007EE5;
+        }
+
+        &_theme_dark {
+            color: #F7F8F8;
+            background-color: #3E6A97;
+            border: 1px solid #3E6A97;
+        }
+
+        &_border_isHide-light {
+            color: black;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 5px;
+        }
+
+        &_border_isHide-dark {
+            @extend .Task__input_border_isHide-light;
+            color: #F7F8F8;
+        }
+
+        &_isChecked-light {
+            color: #CCCBD0;
+        }
+
+        &_isChecked-dark {
+            color: #747B85;
+        }
+    }
+
+    &_isOut {
+        opacity: 0;
+        transition: .3s;
+    }
+}
+
+.icon-trash {
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+@keyframes fadeInTask {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .Task {
+
+        &__input {
+            width: 85%;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Task {
+
+        &__input {
+            width: 82%;
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .Task {
+
+        &__input {
+            width: 78%;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .Task {
+
+        &__input {
+            width: 70%;
+        }
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .Task {
+
+        &__input {
+            width: 65%;
+        }
+    }
+}
