@@ -105,6 +105,12 @@ export class AddBar extends Component {
                 <button
                     className={`button AddBar__add-button AddBar__add-button_theme_${theme}`}
                     aria-label="Delete button"
+                    onMouseDown={e => {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        return false;
+                    }}
                     onClick={this.handleClick}
                 >
                     <i className="fas fa-plus" />
